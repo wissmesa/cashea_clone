@@ -38,27 +38,6 @@ export default function TabsLayout() {
 
             />
             <Tabs.Screen
-                name="index"
-                options={() => ({
-                    title: "Inicio", // Título dinámico basado en los parámetros de la ruta
-                    tabBarIcon: ({ color }) => {
-                        const isFocused = useIsFocused();
-                        return (
-                            <View>
-                                {isFocused ? (
-                                    <HomeIcon color={color} />
-                                ) : (
-                                    <EmptyHomeIcon color={color} />
-                                )}
-                            </View>
-                        );
-                    },
-                    tabBarIconStyle: {
-                        color: "gray",
-                    }
-                })}
-            />
-            <Tabs.Screen
                 name="qr"
                 options={{
                     title: "",
@@ -83,6 +62,28 @@ export default function TabsLayout() {
                     }
                 }}
             />
+            <Tabs.Screen
+                name="index"
+                options={() => ({
+                    title: "Inicio", // Título dinámico basado en los parámetros de la ruta
+                    tabBarIcon: ({ color }) => {
+                        const isFocused = useIsFocused();
+                        return (
+                            <View>
+                                {isFocused ? (
+                                    <HomeIcon color={color} />
+                                ) : (
+                                    <EmptyHomeIcon color={color} />
+                                )}
+                            </View>
+                        );
+                    },
+                    tabBarIconStyle: {
+                        color: "gray",
+                    }
+                })}
+            />
+
 
         </Tabs>
     );
