@@ -1,9 +1,21 @@
 
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import Feather from '@expo/vector-icons/Feather';
+import FontAwesomeUser from '@expo/vector-icons/FontAwesome';
+import FontAwesomeUserFill from '@expo/vector-icons/FontAwesome';
 
 export const CircleInfoIcon = (props) => <FontAwesome6 name="circle-info" size={24} color="white" {...props} />
 
 export const HomeIcon = (props) => <FontAwesome name="home" size={24} color="white" {...props} />
 
 export const InfoIcon = (props) => <FontAwesome name="info" size={32} color="white" {...props} />
+
+export const QrIcon = (props) => <MaterialIcons name="qr-code-2" size={30} color="black" {...props}  />
+
+export const EmptyHomeIcon = (props) => <Feather name="home" size={24} color="black" {...props}  />
+
+export const EmptyUserIcon = (props) => <FontAwesomeUser name="user" size={24} color="black" {...props} />
+
+export const EmptyUserFillIcon = (props) => <FontAwesomeUserFill name="user-o" size={24} color="black"  {...props}/>
