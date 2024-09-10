@@ -16,6 +16,28 @@ export default function TabsLayout() {
             }}
         >
             <Tabs.Screen
+                name="perfil"
+                options={() => ({
+                    title: "Perfil", // Título dinámico basado en los parámetros de la ruta
+                    tabBarIcon: ({ color }) => {
+                        const isFocused = useIsFocused();
+                        return (
+                            <View>
+                                {isFocused ? (
+                                    <EmptyUserIcon color={color} />
+                                ) : (
+                                    <EmptyUserFillIcon color={color} />
+                                )}
+                            </View>
+                        );
+                    },
+                    tabBarIconStyle: {
+                        color: "gray",
+                    },
+                })}
+
+            />
+            <Tabs.Screen
                 name="index"
                 options={() => ({
                     title: "Inicio", // Título dinámico basado en los parámetros de la ruta
@@ -61,27 +83,7 @@ export default function TabsLayout() {
                     }
                 }}
             />
-            <Tabs.Screen
-                name="perfil"
-                options={() => ({
-                    title: "Perfil", // Título dinámico basado en los parámetros de la ruta
-                    tabBarIcon: ({ color }) => {
-                        const isFocused = useIsFocused();
-                        return (
-                            <View>
-                                {isFocused ? (
-                                    <EmptyUserIcon color={color} />
-                                ) : (
-                                    <EmptyUserFillIcon color={color} />
-                                )}
-                            </View>
-                        );
-                    },
-                    tabBarIconStyle: {
-                        color: "gray",
-                    }
-                })}
-            />
+
         </Tabs>
     );
 }

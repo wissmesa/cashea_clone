@@ -5,6 +5,8 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import Feather from '@expo/vector-icons/Feather';
 import FontAwesomeUser from '@expo/vector-icons/FontAwesome';
 import FontAwesomeUserFill from '@expo/vector-icons/FontAwesome';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 export const CircleInfoIcon = (props) => <FontAwesome6 name="circle-info" size={24} color="white" {...props} />
 
@@ -19,3 +21,7 @@ export const EmptyHomeIcon = (props) => <Feather name="home" size={24} color="bl
 export const EmptyUserIcon = (props) => <FontAwesomeUser name="user" size={24} color="black" {...props} />
 
 export const EmptyUserFillIcon = (props) => <FontAwesomeUserFill name="user-o" size={24} color="black"  {...props}/>
+
+export const HelpUserIcon = (props) => <Ionicons name="help-sharp" size={24} color="black" />
+
+export const ShopUserIcon = (props) => <Ionicons name="list-outline" size={24} color="black" {...props}/>

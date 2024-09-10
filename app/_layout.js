@@ -6,17 +6,17 @@ export default function Layout() {
     return (
         <View className="flex-1">
             <Stack screenOptions={{
-                headerStyle: { backgroundColor: "black" },
+                headerStyle: { backgroundColor: "#ffee00" },
                 headerTintColor: "white",
                 headerTitle: "",
-                headerLeft: () => <Logo />,
-                headerRight: () => (
-                    <Link href="/about" asChild>
-                        <Pressable>
-                            <CircleInfoIcon />
-                        </Pressable>
-                    </Link>
-                )
+                // headerLeft: () => <Logo />,
+                // headerRight: () => (
+                //     <Link href="/about" asChild>
+                //         <Pressable>
+                //             <CircleInfoIcon />
+                //         </Pressable>
+                //     </Link>
+                // )
             }} />
         </View>
     );
