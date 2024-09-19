@@ -1,11 +1,11 @@
 import React from 'react'
-import { View } from 'react-native'
+import { ScrollView, View } from 'react-native'
 
  const ScreenHome = ({children}) => {
   return (
-    <View className="bg-gray-100 min-h-screen mx-4">
+    <ScrollView showsVerticalScrollIndicator={false} className="bg-gray-100 min-h-screen mx-4">
         {children}
-    </View>
+    </ScrollView>
   )
 }
 

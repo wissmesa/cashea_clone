@@ -8,6 +8,7 @@ import CasheaLogo from "../../assets/CasheaLogo.png"
 import { useState } from "react";
 import { SaveIcon, SearchIcon } from "../../Components/Icons/Icons";
 import { styled } from "nativewind";
+import InviteFriendsBanner from "../../assets/InviteFriendsBanner.jpeg";
 const arrayPrueba = [
     {
         texto: "Hogar",
@@ -77,8 +78,6 @@ export default function Index() {
                 <SearchIcon />
                 <Text className='text-black ml-2'>¿Que necesitas #Cashear?</Text>
             </View>
-
-
             <View className='mt-4  flex-row'>
                 <Pressable
                     onPress={() => setoptionSelected('Principal')}
@@ -92,7 +91,7 @@ export default function Index() {
                 <Pressable
                     onPress={() => setoptionSelected('Cotidiana')}
                     style={[
-                        { backgroundColor: optionSelected === 'Cotidiana' ? '#7f7f7f' : 'white' },
+                        { backgroundColor: optionSelected === 'Cotidiana' ? '#7f7f7f' : 'white', marginLeft: 10 },
                         styles.buttonOptions
                     ]}>
                     <Text style={{
@@ -103,21 +102,65 @@ export default function Index() {
             </View>
             <View className='mt-4 items-center justify-center'>
                 <Text className='text-3xl font-extrabold'>$ 464.00</Text>
+                <View className='border-2 w-full border-yellow-200 my-2'></View>
                 <Text>Cashea en cuotas online o escaneando el QR</Text>
             </View>
-            <ScrollView horizontal={true} centerContent={true} className='mt-10'>
-                {arrayPrueba.map((item, index) => {
-                    return (
-                        <View key={index} className=' mr-5 flex justify-center h-20 w-32 items-center bg-white p-6 rounded-xl'>
-                            {item.icon}
-                            <Text className='text-xs mt-1 font-semibold '>{item.texto}</Text>
-                        </View>
-                    )
-                })}
-            </ScrollView>
-            <Text>asdas</Text>
-            <Text>asdas</Text>
+            {/* SCROLL VIEW DE PRODUCTOS */}
+            <View className='mt-4'>
+                <ScrollView horizontal={true} centerContent={true} contentContainerStyle={styles.contentContainer} >
+                    {arrayPrueba.map((item, index) => {
+                        return (
+                            <View key={index} className=' mr-5 flex justify-center h-20 w-32 items-center bg-white p-6 rounded-xl'>
+                                {item.icon}
+                                <Text className='text-xs mt-1 font-semibold '>{item.texto}</Text>
+                            </View>
+                        )
+                    })}
+                </ScrollView>
+            </View>
+            {/* MODO MAS CUOTAS */}
+            <View className='mt-4 flex-row items-center justify-between px-1'>
+                <Text className='text-xl font-extrabold'>Modo más cuotas</Text>
+                <StyledPressable className="p-3 px-4 bg-yellow-200 rounded-full">
+                    <Text className="text-black-500">Ver más</Text>
+                </StyledPressable>
+            </View>
+            <View className='mt-4'>
+                <ScrollView horizontal={true} centerContent={true} contentContainerStyle={styles.contentContainer} >
+                    {arrayPrueba.map((item, index) => {
+                        return (
+                            <View key={index} className=' mr-5 flex justify-center h-60 w-40 items-center bg-white  rounded-xl'>
+                                {item.icon}
+                                <Text className='text-xs mt-1 font-semibold '>{item.texto}</Text>
+                            </View>
+                        )
+                    })}
+                </ScrollView>
+            </View>
+            <View className='mt-4'>
+                <ScrollView horizontal={true} centerContent={true} contentContainerStyle={styles.contentContainer} >
+                    {arrayPrueba.map((item, index) => {
+                        return (
+                            <View key={index} className=' mr-5 flex justify-center h-20 w-40 items-center bg-white p-6 rounded-xl'>
+                                {item.icon}
+                                <Text className='text-xs mt-1 font-semibold '>{item.texto}</Text>
+                            </View>
+                        )
+                    })}
+                </ScrollView>
+            </View>
 
+            {/* FOOTER */}
+            <View className='my-4'>
+                <Image
+                    source={InviteFriendsBanner}
+                    style={{ width: 355, height: 70 }} />
+            </View>
+            <View className='mb-64'>
+                <Text>Grupo Cashea VE C.A. no está autorizado por la
+                    Superintendencia de Instituciones del Sector Bancario
+                    (SUDEBAN) para intermediar o fungir como pasarela de pagos entre clientes y comercios. Cashea es un portal que ofrece a los clientes acceder a compras a plazo en comercios afiliados pero son estos últimos quienes otorgan dicho beneficio. Los clientes abonarán o depositarán los pagos o cuotas directamente en las cuentas bancarias de los comercios.</Text>
+            </View>
         </ScreenHome>
     )
 }
@@ -128,6 +171,17 @@ const styles = StyleSheet.create({
         paddingLeft: 14,
         paddingRight: 14,
         borderRadius: 20,
-        marginLeft: 10
+        // marginLeft: 5
     },
+    contentContainer: {
+        paddingVertical: 18,
+    },
+    buttonShowMore: {
+        padding: 10,
+        paddingLeft: 14,
+        paddingRight: 14,
+        borderRadius: 20,
+        marginLeft: 10,
+        backgroundColor: 'yellow'
+    }
 });
