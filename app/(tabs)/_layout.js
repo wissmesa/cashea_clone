@@ -16,26 +16,25 @@ export default function TabsLayout() {
             }}
         >
             <Tabs.Screen
-                name="perfil"
+                name="index"
                 options={() => ({
-                    title: "Perfil", // Título dinámico basado en los parámetros de la ruta
+                    title: "Inicio", // Título dinámico basado en los parámetros de la ruta
                     tabBarIcon: ({ color }) => {
                         const isFocused = useIsFocused();
                         return (
                             <View>
                                 {isFocused ? (
-                                    <EmptyUserIcon color={color} />
+                                    <HomeIcon color={color} />
                                 ) : (
-                                    <EmptyUserFillIcon color={color} />
+                                    <EmptyHomeIcon color={color} />
                                 )}
                             </View>
                         );
                     },
                     tabBarIconStyle: {
                         color: "gray",
-                    },
+                    }
                 })}
-
             />
             <Tabs.Screen
                 name="qr"
@@ -63,24 +62,24 @@ export default function TabsLayout() {
                 }}
             />
             <Tabs.Screen
-                name="index"
+                name="perfil"
                 options={() => ({
-                    title: "Inicio", // Título dinámico basado en los parámetros de la ruta
+                    title: "Perfil", // Título dinámico basado en los parámetros de la ruta
                     tabBarIcon: ({ color }) => {
                         const isFocused = useIsFocused();
                         return (
                             <View>
                                 {isFocused ? (
-                                    <HomeIcon color={color} />
+                                    <EmptyUserIcon color={color} />
                                 ) : (
-                                    <EmptyHomeIcon color={color} />
+                                    <EmptyUserFillIcon color={color} />
                                 )}
                             </View>
                         );
                     },
                     tabBarIconStyle: {
                         color: "gray",
-                    }
+                    },
                 })}
             />
 

@@ -8,6 +8,7 @@ import FontAwesomeUserFill from '@expo/vector-icons/FontAwesome';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
+import EvilIcons from '@expo/vector-icons/EvilIcons';
 
 export const CircleInfoIcon = (props) => <FontAwesome6 name="circle-info" size={24} color="white" {...props} />
 
@@ -30,3 +31,8 @@ export const ShopUserIcon = (props) => <Ionicons name="list-outline" size={24} c
 export const ArrowRight = (props) => <SimpleLineIcons name="arrow-right" size={10} color="black"  {...props}/>
 
 export const LogoutIcon = (props) => <MaterialIcons name="logout" size={18} color="black" {...props} />
+
+export const SearchIcon = (props) => <EvilIcons name="search" size={24} color="black" {...props} />
+
+export const SaveIcon = (props) => <AntDesign name="save" size={20} color="black" {...props}/>
+
