@@ -9,6 +9,8 @@ import { useState } from "react";
 import { SaveIcon, SearchIcon } from "../../Components/Icons/Icons";
 import { styled } from "nativewind";
 import InviteFriendsBanner from "../../assets/InviteFriendsBanner.jpeg";
+import { CarrouselItems } from "../../Components/Carrousel/CarrouselItems";
+import { CarrouselTitle } from "../../Components/Carrousel/CarrouselTitle";
 const arrayPrueba = [
     {
         texto: "Hogar",
@@ -44,6 +46,26 @@ const arrayPrueba = [
     },
     {
         texto: "Salud",
+        icon: <HomeSVGIcon />
+    },
+]
+const arrayOptionsForUser = [
+    {
+        title: "CASHEA",
+        texto: "Los favoritos de Cashea: !Productos que no puedes dejar pasar!",
+        icon: <HomeSVGIcon />
+    },
+    {
+        title: "DAMASCO",
+        texto: "Renueva tu hogar con Damasco: Mas cuotas, mas comodidad para ti",
+        icon: <HomeSVGIcon />
+    }, {
+        title: "SOYTECHNO",
+        texto: "Los mejores productos para el regreso a clases con Soytechno",
+        icon: <HomeSVGIcon />
+    }, {
+        title: "CASHEA",
+        texto: "El regreso a clases es facil con Cashea! Encuentra todo lo que necesitas aqui",
         icon: <HomeSVGIcon />
     },
 ]
@@ -106,21 +128,39 @@ export default function Index() {
                 <Text>Cashea en cuotas online o escaneando el QR</Text>
             </View>
             {/* SCROLL VIEW DE PRODUCTOS */}
+            <CarrouselItems arrayItems={arrayPrueba} />
+            {/* MODO MAS CUOTAS */}
+            <CarrouselTitle titleSection="Modo más cuotas" titleButton="Ver más" />
+            <CarrouselItems arrayItems={arrayPrueba} />
+            {/* TIENDAS DISPONIBLES */}
+            <CarrouselTitle titleSection="Tiendas disponibles" titleButton="Ver más" />
+            <CarrouselItems arrayItems={arrayPrueba} />
+            {/* DESCUENTOS EN LO QUE NECESITAS */}
+            <CarrouselTitle titleSection="Descuentos para ti" titleButton="Ver más" />
+            <CarrouselItems arrayItems={arrayPrueba} />
+            {/* OPCIONES DE RECUERDO */}
             <View className='mt-4'>
                 <ScrollView horizontal={true} centerContent={true} contentContainerStyle={styles.contentContainer} >
-                    {arrayPrueba.map((item, index) => {
+                    {arrayOptionsForUser.map((item, index) => {
                         return (
-                            <View key={index} className=' mr-5 flex justify-center h-20 w-32 items-center bg-white p-6 rounded-xl'>
-                                {item.icon}
-                                <Text className='text-xs mt-1 font-semibold '>{item.texto}</Text>
+                            <View key={index} className=' mr-2  h-30 w-80  bg-white p-6 rounded-xl'>
+                                <View>
+                                    <Text className='text-sm text-gray-400 font-normal'>{item.title}</Text>
+                                    <View className='flex-row '>
+                                        <View className='flex-shrink '>
+                                            <Text className='text-xs mt-1  font-semibold flex-shrink '>{item.texto}</Text>
+                                        </View>
+                                        <View>{item.icon}</View>
+                                    </View>
+                                </View>
                             </View>
                         )
                     })}
                 </ScrollView>
             </View>
-            {/* MODO MAS CUOTAS */}
+            {/* DESCUENTOS EN LO QUE NECESITAS */}
             <View className='mt-4 flex-row items-center justify-between px-1'>
-                <Text className='text-xl font-extrabold'>Modo más cuotas</Text>
+                <Text className='text-xl font-extrabold border-2'>Destacados de la Semana </Text>
                 <StyledPressable className="p-3 px-4 bg-yellow-200 rounded-full">
                     <Text className="text-black-500">Ver más</Text>
                 </StyledPressable>
@@ -129,7 +169,7 @@ export default function Index() {
                 <ScrollView horizontal={true} centerContent={true} contentContainerStyle={styles.contentContainer} >
                     {arrayPrueba.map((item, index) => {
                         return (
-                            <View key={index} className=' mr-5 flex justify-center h-60 w-40 items-center bg-white  rounded-xl'>
+                            <View key={index} className=' mr-2 flex justify-center h-20 w-40 items-center bg-white p-6 rounded-xl'>
                                 {item.icon}
                                 <Text className='text-xs mt-1 font-semibold '>{item.texto}</Text>
                             </View>
@@ -137,19 +177,6 @@ export default function Index() {
                     })}
                 </ScrollView>
             </View>
-            <View className='mt-4'>
-                <ScrollView horizontal={true} centerContent={true} contentContainerStyle={styles.contentContainer} >
-                    {arrayPrueba.map((item, index) => {
-                        return (
-                            <View key={index} className=' mr-5 flex justify-center h-20 w-40 items-center bg-white p-6 rounded-xl'>
-                                {item.icon}
-                                <Text className='text-xs mt-1 font-semibold '>{item.texto}</Text>
-                            </View>
-                        )
-                    })}
-                </ScrollView>
-            </View>
-
             {/* FOOTER */}
             <View className='my-4'>
                 <Image
