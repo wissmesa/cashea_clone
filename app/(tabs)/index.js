@@ -11,6 +11,7 @@ import { styled } from "nativewind";
 import InviteFriendsBanner from "../../assets/InviteFriendsBanner.jpeg";
 import { CarrouselItems } from "../../Components/Carrousel/CarrouselItems";
 import { CarrouselTitle } from "../../Components/Carrousel/CarrouselTitle";
+import { CarrouselLargeItems } from "../../Components/Carrousel/CarrouselLargeItems";
 const arrayPrueba = [
     {
         texto: "Hogar",
@@ -139,44 +140,10 @@ export default function Index() {
             <CarrouselTitle titleSection="Descuentos para ti" titleButton="Ver más" />
             <CarrouselItems arrayItems={arrayPrueba} />
             {/* OPCIONES DE RECUERDO */}
-            <View className='mt-4'>
-                <ScrollView horizontal={true} centerContent={true} contentContainerStyle={styles.contentContainer} >
-                    {arrayOptionsForUser.map((item, index) => {
-                        return (
-                            <View key={index} className=' mr-2  h-30 w-80  bg-white p-6 rounded-xl'>
-                                <View>
-                                    <Text className='text-sm text-gray-400 font-normal'>{item.title}</Text>
-                                    <View className='flex-row '>
-                                        <View className='flex-shrink '>
-                                            <Text className='text-xs mt-1  font-semibold flex-shrink '>{item.texto}</Text>
-                                        </View>
-                                        <View>{item.icon}</View>
-                                    </View>
-                                </View>
-                            </View>
-                        )
-                    })}
-                </ScrollView>
-            </View>
+            <CarrouselLargeItems arrayItems={arrayOptionsForUser} />
             {/* DESCUENTOS EN LO QUE NECESITAS */}
-            <View className='mt-4 flex-row items-center justify-between px-1'>
-                <Text className='text-xl font-extrabold border-2'>Destacados de la Semana </Text>
-                <StyledPressable className="p-3 px-4 bg-yellow-200 rounded-full">
-                    <Text className="text-black-500">Ver más</Text>
-                </StyledPressable>
-            </View>
-            <View className='mt-4'>
-                <ScrollView horizontal={true} centerContent={true} contentContainerStyle={styles.contentContainer} >
-                    {arrayPrueba.map((item, index) => {
-                        return (
-                            <View key={index} className=' mr-2 flex justify-center h-20 w-40 items-center bg-white p-6 rounded-xl'>
-                                {item.icon}
-                                <Text className='text-xs mt-1 font-semibold '>{item.texto}</Text>
-                            </View>
-                        )
-                    })}
-                </ScrollView>
-            </View>
+            <CarrouselTitle titleSection="Destacados de la Semana" titleButton="Ver más" />
+            <CarrouselItems arrayItems={arrayPrueba} />
             {/* FOOTER */}
             <View className='my-4'>
                 <Image
